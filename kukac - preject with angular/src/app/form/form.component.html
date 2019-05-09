@@ -1,0 +1,77 @@
+<div class="form">
+    <div>
+        <h1>Dados</h1>
+        <mat-horizontal-stepper [linear]=true #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup">
+                    <div>
+                        <ng-template matStepLabel>Digite seu nome</ng-template>
+                        <mat-form-field>
+                            <input matInput placeholder="Name" formControlName="firstCtrl" required [(ngModel)]="data.name">
+                        </mat-form-field>
+                        <mat-slide-toggle [checked]="checked" (change)='unnamed($event)'>Anônimo</mat-slide-toggle>
+                        <div class="align">
+                            <button mat-button matStepperNext>próximo</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+                <form [formGroup]="secondFormGroup">
+                    <div>
+                        <ng-template matStepLabel>Digite seu Cep</ng-template>
+                        <mat-form-field>
+                            <input matInput placeholder="Cep" formControlName="secondCtrl" [textMask]="{mask: cepMask}" [(ngModel)]="data.cep" required>
+                        </mat-form-field>
+                        <div class="align">
+                            <button mat-button matStepperPrevious>voltar</button>
+                            <button mat-button matStepperNext>próximo</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="thirdFormGroup">
+                <form [formGroup]="thirdFormGroup">
+                    <div>
+                        <ng-template matStepLabel>Renda Mensal</ng-template>
+                        <mat-form-field>
+                            <input matInput placeholder="renda" type="number" formControlName="thirdCtrl" class="example-right-align" [(ngModel)]="data.rm" required>
+                            <span matPrefix>$&nbsp;</span>
+                            <span matSuffix>.00</span>
+                        </mat-form-field>
+                        <div class="align">
+                            <button mat-button matStepperPrevious>voltar</button>
+                            <button mat-button matStepperNext>próximo</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="fourthFormGroup">
+                    <form [formGroup]="fourthFormGroup">
+                        <div>
+                            <ng-template matStepLabel>Número de dependentes</ng-template>
+                            <mat-form-field>
+                                <input matInput placeholder="dependentes" type="number" formControlName="fourthCtrl" [(ngModel)]="data.nd" required>
+                            </mat-form-field>
+                            <div class="align">
+                                <button mat-button matStepperPrevious>voltar</button>
+                                <button mat-button matStepperNext>próximo</button>
+                            </div>
+                        </div>
+                    </form>
+                </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Concluido</ng-template>
+                <div class="align">
+                    <div>
+                        <p *ngIf="invalidCep" class="align">Cep inválido! Confira se digitou corretamente</p>
+                        <div class="align">
+                            <button mat-button matStepperPrevious>Voltar</button>
+                            <button mat-button (click)="cepTest()">Validar</button>
+                        </div>
+                    </div>
+                </div>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+</div>

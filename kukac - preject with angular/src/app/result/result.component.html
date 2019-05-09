@@ -1,0 +1,70 @@
+<div class="result">
+  <div>
+    <mat-card>
+      <h1>Resultado</h1>
+      <table class="example-full-width content" cellspacing="0">
+        <tr>
+          <td>
+            <h3>Endereço</h3>
+            <form class="example-form">
+              <table class="example-full-width" cellspacing="0">
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Logradouro" [(ngModel)]="address.logradouro" [ngModelOptions]="{standalone: true}" disabled>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Bairro" [(ngModel)]="address.bairro" [ngModelOptions]="{standalone: true}" disabled>
+                    </mat-form-field>
+                  </td>
+                </tr>
+              </table>
+              <table class="example-full-width" cellspacing="0">
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Cidade" [(ngModel)]="address.cidade" [ngModelOptions]="{standalone: true}" disabled>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Estado" [(ngModel)]="address.estado" [ngModelOptions]="{standalone: true}" disabled>
+                    </mat-form-field>
+                  </td>
+                </tr>
+              </table>
+              <table class="example-full-width" cellspacing="0">
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Complemento" [(ngModel)]="address.complemento" [ngModelOptions]="{standalone: true}" disabled>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Cep" [(ngModel)]="address.cep" [ngModelOptions]="{standalone: true}" disabled>
+                    </mat-form-field>
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </td>
+          <td>
+            <form class="example-form">
+              <h3>Nome</h3>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Nome" [(ngModel)]="data.name" [ngModelOptions]="{standalone: true}" disabled>
+              </mat-form-field>
+              <h3>Renda per capita</h3>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Renda" [(ngModel)]="data.rpc" [ngModelOptions]="{standalone: true}" disabled>
+              </mat-form-field>
+            </form>
+          </td>
+        </tr>
+      </table>
+    </mat-card>
+  </div>
+</div>
