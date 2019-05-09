@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calc Met</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="materialize/css/materialize.css">
+	<link rel="stylesheet" href="index.css">
+	<meta http-equiv="Content-Language" content="pt-br">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+	<script src="materialize/js/materialize.js"></script>
+	
+	<script src="tipoPrincipal.js"></script>
+	<script src="formula.js"></script>
+	<script src="index.js"></script>
+</head>
+<body>
+	<div class="loading">
+		<h1>Loading</h1>
+		<div class="preloader-wrapper big active">
+		<div class="spinner-layer spinner-blue">
+			<div class="circle-clipper left">
+			<div class="circle"></div>
+			</div><div class="gap-patch">
+			<div class="circle"></div>
+			</div><div class="circle-clipper right">
+			<div class="circle"></div>
+			</div>
+		</div>
+	
+		<div class="spinner-layer spinner-red">
+			<div class="circle-clipper left">
+			<div class="circle"></div>
+			</div><div class="gap-patch">
+			<div class="circle"></div>
+			</div><div class="circle-clipper right">
+			<div class="circle"></div>
+			</div>
+		</div>
+	
+		<div class="spinner-layer spinner-yellow">
+			<div class="circle-clipper left">
+			<div class="circle"></div>
+			</div><div class="gap-patch">
+			<div class="circle"></div>
+			</div><div class="circle-clipper right">
+			<div class="circle"></div>
+			</div>
+		</div>
+	
+		<div class="spinner-layer spinner-green">
+			<div class="circle-clipper left">
+			<div class="circle"></div>
+			</div><div class="gap-patch">
+			<div class="circle"></div>
+			</div><div class="circle-clipper right">
+			<div class="circle"></div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div class="carousel carousel-slider center">
+		<div class="carousel-fixed-item center">
+			<a class="btn btn-large white waves-effect grey-text darken-text-2" id="button">Avançar</a>
+		</div>
+		<div class="carousel-item first-item blue-grey-text text-lighten-3 valign-wrapper">
+			<div class="row">
+				<h2 class="h2-titulo tipo-principal">Renda per capita</h2>
+				<h4>Calcule sua renda</h4>
+			</div>
+		</div>
+		<div class="carousel-item other-item blue-grey-text text-lighten-3 valign-wrapper">
+			<a class="btn btn-flat white back"><i class="material-icons grey-text darken-text-2">arrow_back</i></a>
+			<div class="row">
+				<h2 class="h2-titulo met">Digite Seu nome</h2>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="name" type="text">
+						<label for="name">Nome</label>
+					</div>
+				</div>
+				<div>
+					<h5>Anônimo</h5>
+					<div class="switch" id="switch">
+						<label>
+							Off
+							<input type="checkbox" id="unnamed">
+							<span class="lever"></span>
+							On
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="carousel-item other-item blue-grey-text text-lighten-3 valign-wrapper">
+			<a class="btn btn-flat white back"><i class="material-icons grey-text darken-text-2">arrow_back</i></a>	
+			<div class="row">
+				<h2 class="h2-titulo">Digite seu Cep</h2>
+				<div class="row">
+					<div class="input-field col s12">
+					  	<input id="cep" type="text">
+					  	<label for="cep">Cep</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="carousel-item other-item blue-grey-text text-lighten-3 valign-wrapper">
+			<a class="btn btn-flat white back"><i class="material-icons grey-text darken-text-2">arrow_back</i></a>	
+			<div class="row">
+				<h2 class="h2-titulo">Renda Mensal</h2>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="rm" type="text">
+						<label for="rm">Renda</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="carousel-item other-item blue-grey-text text-lighten-3 valign-wrapper">
+			<a class="btn btn-flat white back"><i class="material-icons grey-text darken-text-2">arrow_back</i></a>	
+			<div class="row">
+				<h2 class="h2-titulo">Número de Dependentes</h2>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="nd" type="number">
+						<label for="nd">Dependentes</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="carousel-item other-item blue-grey-text text-lighten-3 valign-wrapper">
+			<a class="btn btn-flat white back"><i class="material-icons grey-text darken-text-2">arrow_back</i></a>	
+			<div class="row">
+				<h2 class="h2-titulo">Renda</h2>
+				<div class="row">
+					<div class="col s12">
+						<div class="col s2"></div>
+						<div class="col s4">
+						<h5>Endereço</h5>
+							<div class="row">
+								<div class="input-field col s6">
+									<input disabled value="disable" id="road" type="text" >
+									<label for="road">Rua</label>
+								</div>
+								<div class="input-field col s6">
+									<input disabled value="disable" id="street" type="text" >
+									<label for="street">Bairro</label>
+								</div>
+								<div class="input-field col s6">
+									<input disabled value="disable" id="city" type="text" >
+									<label for="city">Cidade</label>
+								</div>
+								<div class="input-field col s6">
+									<input disabled value="disable" id="uf" type="text" >
+									<label for="uf">Estado</label>
+								</div>
+								<div class="input-field col s6">
+									<input disabled value="disable" id="ibge" type="text" >
+									<label for="ibge">IBGE</label>
+								</div>
+								<div class="input-field col s6">
+									<input disabled value="disable" id="cep-r" type="text" >
+									<label for="cep-r">Cep</label>
+								</div>
+							</div>
+						</div>
+						<div class="col s4">
+							<div class="row">
+								<div class="col s6">
+									<h5 class="col s12">Nome</h5>
+									<div class="input-field col s12">
+										<input disabled value="disable" id="name-r" type="text" >
+										<label for="name-r">Nome</label>
+									</div>
+								</div>
+								<div class="col s6">
+									<h5 class="col s12">Renda</h5>
+									<div class="input-field col s12">
+											<input disabled value="disable" id="income" type="text" >
+											<label for="income">Renda per capita</label>
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
